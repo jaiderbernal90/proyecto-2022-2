@@ -24,15 +24,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-// import { UserService }from "../services/user.service"
-// import { matchedData } from 'express-validator/filter'
-// import { validationResult } from 'express-validator/check'
 const user_rules_1 = require("../rules/user.rules");
-// import { UserAddModel } from "../interfaces/User.interface";
 const userController = __importStar(require("../controllers/userController"));
 const router = (0, express_1.Router)();
-router.get("/users", userController.getAll);
+router.get("/user", userController.getAll);
 router.get("/user/:idUser", userController.get);
-router.post("/user/create", user_rules_1.userRules['forCreate'], userController.create);
+router.post("/user/create", user_rules_1.validateCreate, userController.create);
+router.put("/user/:idUser", user_rules_1.validateCreate, userController.update);
+router.delete("/user/:idUser", userController.destroy);
 exports.default = router;
 //# sourceMappingURL=index.js.map

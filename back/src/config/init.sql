@@ -6,6 +6,16 @@ create table users(
     name text not null,
     email text not null unique,
     password text not null,
-    createdAt datetime,
-    updatedAt datetime
+    type_document text null
+    document int null
+    date_birth text null
+    blood_type text null
+    health_habits text null
+    congenitals_defects text null
+    medical_conditions text null
+    eps text null
+    responsible_home text null
+    gender text null
+    created_at datetime,
+    updated_at datetime
 );
