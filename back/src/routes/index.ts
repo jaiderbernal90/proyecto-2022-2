@@ -5,6 +5,8 @@ import * as authController from '../controllers/authController';
 import { validateLogin } from '../rules/login.rules';
 import { tokenGuard } from '../middleware/auth';
 
+/* Creating a router object and then adding routes to it. */
+
 const router = Router()
 
 // LOGIN 

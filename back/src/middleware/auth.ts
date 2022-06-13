@@ -3,6 +3,12 @@ import { RequestHandler } from 'express'
 import { verifyToken } from '../controllers/authController';
 
 
+/**
+ * It takes an object with a property called authorization, and returns the value of that property, or
+ * undefined if the property doesn't exist.
+ * @param {IncomingHttpHeaders} headers - IncomingHttpHeaders
+ * @returns The token from the header.
+ */
 function getTokenFromHeaders(headers: IncomingHttpHeaders) {
   const header = headers.authorization as string
 

@@ -1,8 +1,6 @@
 import { NextFunction, Request, Response} from 'express'
 import { User } from '../models/User'
 import * as jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
-import { UserAddModel, UserModel, UserViewModel } from '../interfaces/User.interface'
 
 
 const _jwtSecret = '0.rfyj3n9nzh'
@@ -11,6 +9,10 @@ let _user;
 export const user = () => {
     return _user;
 }
+
+/**
+ * @returns The token is being returned.
+ */
 
 export const login = async (req: Request, res: Response): Promise<Response> => {
     const { email } = req.body;
@@ -23,6 +25,12 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 
 
  
+/**
+ * VerifyToken is a function that takes a token as a string and returns a promise that resolves to a
+ * boolean.
+ * @param {string} token - the token to verify
+ * @returns A promise that resolves to a boolean.
+ */
 export const verifyToken  = async (token:string) => {
 
     return new Promise((resolve, reject) => {
