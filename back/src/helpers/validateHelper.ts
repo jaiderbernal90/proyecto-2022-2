@@ -6,8 +6,8 @@ export const validateResult = (req:Request,res:Response,next:NextFunction) => {
     try {
         validationResult(req).throw()
         return next()
-    } catch (error) {
+    } catch (error:any) {
         res.status(403)
-        res.send({errors: error})
+        res.send({errors: error.array()})
     }
 }
