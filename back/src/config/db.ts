@@ -1,5 +1,6 @@
 import { Dialect, Sequelize } from 'sequelize'
 
+/* Creating a connection to the database. */
 const dbName = 'project' as string
 const dbUser = 'root' as string
 const dbHost = '127.0.0.1'
