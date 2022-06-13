@@ -25,7 +25,7 @@ export const tokenGuard: (() => RequestHandler) = (() => (req, res, next) => {
 
   hasAccess.then(a => {
     if (!a)
-      return res.status(401).send({ message: 'No autorizado' })
+      return res.status(401).send({ success: false, message: 'No autorizado' })
     next()
   })
 })
