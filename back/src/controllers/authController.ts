@@ -20,7 +20,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
     
     const { id } = user!;
 
-    return res.status(200).json({ token: jwt.sign({ id, email }, _jwtSecret, { expiresIn : '48h'}) })
+    return res.status(200).json({ success:true, token: jwt.sign({ id, email }, _jwtSecret, { expiresIn : '48h'}), user: user  })
 }
 
 
