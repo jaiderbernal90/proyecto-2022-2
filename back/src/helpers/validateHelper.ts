@@ -17,6 +17,6 @@ export const validateResult = (req:Request,res:Response,next:NextFunction) => {
         return next()
     } catch (error:any) {
         res.status(403)
-        res.send({errors: error.array()})
+        res.send({success: false, errors: error.array()})
     }
 }
