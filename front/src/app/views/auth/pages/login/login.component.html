@@ -1,25 +1,29 @@
-<form [formGroup]="form" (submit)="login()">
-  <div class="container-form">
-     <img  id="fondo" src="/front/src/assets/imagenes/Healthy life.png">
-    <h1 class="mb-4">Iniciar Sesión</h1>
-    <p class="text1">Por favor ingresa tus credenciales</p>
-    <div class=" email">
-      <label class="label1"> Correo Electrónico</label>
-      <input type="email" formControlName="email" class="form-control" placeholder="Ingresa tu correo electrónico"
-        [class.is-invalid]="isInvalid('email')" required>
+<app-body>
+  <div class="form" form>
+    <div class="header__content">
+      <app-logo></app-logo>
+      <h2 class="title__principaly">Iniciar Sesión</h2>
+      <p class="text__principlay">Por favor ingresa tus credenciales</p>
     </div>
-    <div class="pass">
-      <label class="label1">Contraseña</label>
-      <input type="password" formControlName="password" class="form-control2" placeholder="Contraseña"
-        [class.is-invalid]="isInvalid('password')" required>
-    </div>
-    <a href="" class="forgot">olvidaste tu Contraseña</a>
-    <div class="">
-      <div class="">
-        <button [disabled]="form.invalid" type="submit" class="" ngxLoading [loadingFlag]="loading" [textInitial]="'Iniciar Sesión'" [textLoading]="'Cargando'"></button>
-      </div>
-      <p class="register">Aun no tienes una cuenta?</p>
-      <a href="" class="link">Registrarse</a>
+    <form [formGroup]="form" (submit)="login()" class="">
+        <div class="form__group">
+          <label class="label1"> Correo Electrónico</label>
+          <input type="email" formControlName="email" class="form__control" placeholder="Ingresa tu correo electrónico"
+            [class.is-invalid]="isInvalid('email')" required>
+        </div>
+        <div class="form__group">
+          <label class="label1">Contraseña</label>
+          <input type="password" formControlName="password" class="form__control" placeholder="Contraseña"
+            [class.is-invalid]="isInvalid('password')" required>
+        </div>
+        <a class="forgot__password">¿Olvidaste tu contraseña?</a>
+        <div class="alert"></div>
+        <div class="form__group">
+            <button [disabled]="form.invalid" type="submit" class="btn__primary" ngxLoading [loadingFlag]="loading" [textInitial]="'Ingresar'" [textLoading]="'Cargando'"></button>
+        </div>
+    </form>
+    <div class="about__register">
+      <span class="register">Aun no tienes una cuenta? <a [routerLink]="['/','registrarse']"class="link">Registrarse</a></span>
     </div>
   </div>
-  </form>
+</app-body>

@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   isInvalid(name) {
     return this.form.controls[name].invalid && this.form.controls[name].touched;
   }
-  login() {
 
+  login() {
     this.loading = true;
     this.authService.login(this.form.value)
       .pipe((finalize(() => this.loading = false)))

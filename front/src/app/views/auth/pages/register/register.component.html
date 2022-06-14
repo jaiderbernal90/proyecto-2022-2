@@ -27,7 +27,45 @@
             [loadingFlag]="loading" [textInitial]="'Ingresar'"
             [textLoading]="'Cargando'"></button>
         </div>
-       <checkbox>Eres padre de familia</checkbox>
+       <input type="checkbox"> Eres padre de familia
       </div>
     </div>
     </form> -->
+    <app-body>
+      <div class="form register" form>
+        <div class="header__content">
+          <app-logo></app-logo>
+          <h2 class="title__principaly">Crear una cuenta</h2>
+          <span class="text__principlay about__register">Ya tienes una cuenta? &nbsp;<a [routerLink]="['/','iniciar-sesion']" class="link"> Iniciar Sesión</a></span>
+        </div>
+        <form [formGroup]="form" (submit)="register()">
+            <div class="form__group">
+              <label class="label1"> Nombre </label>
+              <input type="text" formControlName="name" class="form__control" placeholder="Ingresa tu nombre completo"
+                [class.is-invalid]="isInvalid('name')" required>
+            </div>
+            <div class="form__group">
+              <label class="label1"> Correo Electrónico</label>
+              <input type="email" formControlName="email" class="form__control" placeholder="Ingresa tu correo electrónico"
+                [class.is-invalid]="isInvalid('email')" required>
+            </div>
+            <div class="form__group">
+              <label class="label1">Contraseña</label>
+              <input type="password" formControlName="password" class="form__control" placeholder="Contraseña"
+                [class.is-invalid]="isInvalid('password')" required>
+            </div>
+            <div class="form__group column">
+              <input type="checkbox" formControlName="responsible_home" class="form__control" [class.is-invalid]="isInvalid('responsible_home')" id="responsible_home"><label for="responsible_home" >Eres padre de familia?</label>
+            </div>
+
+            <div class="alert"></div>
+            <div class="form__group">
+                <button [disabled]="form.invalid" type="submit" class="btn__primary" ngxLoading [loadingFlag]="loading" [textInitial]="'Ingresar'" [textLoading]="'Cargando'"></button>
+            </div>
+        </form>
+        <div class="about__register">
+          <!-- <span class="register">Aun no tienes una cuenta? <a [routerLink]="['/','registrarse']" class="link">Registrarse</a></span> -->
+        </div>
+      </div>
+    </app-body>
+

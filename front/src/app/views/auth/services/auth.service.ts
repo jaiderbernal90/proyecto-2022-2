@@ -22,6 +22,10 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/login`, body)
   }
 
+  public register(body: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, body)
+  }
+
   public refreshToken() {
     return this.http.get(`${this.apiUrl}/refresh`);
   }
@@ -67,7 +71,7 @@ export class AuthService {
   }
 
   redirectLogin = () => {
-    this.router.navigate(['/','login']);
+    this.router.navigate(['/','iniciar-sesion']);
   }
 
   checkSession = (redirect = true) => {

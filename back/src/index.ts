@@ -20,11 +20,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Habilitar cors
 // Add a list of allowed origins.
-const allowedOrigins = ['*'];
+const allowedOrigins = ['http://localhost:4200'];
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins
 };
+
+// app.use(cors({origin: 'http://localhost:3000'}));
+
 
 app.use(cors(options));
 
