@@ -1,0 +1,87 @@
+.mb-4{
+    font-weight: bold;
+    color:black;
+    background-size: cover;
+    padding-top: 100px;
+}
+.body{
+    font-family: sans-serif;
+    width: 100%;
+    height: 80%;
+    background-size: cover;
+}
+.container-form{
+    background: url(https://images.unsplash.com/photo-1483721310020-03333e577078?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8c2VhcmNofDk4fHxoZWFsdGh8ZW58MHx8fHwxNjU0OTkwODk4&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450)no-repeat 0px 0px;
+    width: 55%;
+    height: 80%;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 30px 33px 67px;
+    opacity: 0.5;
+    border-radius: 40px;
+}
+.label1{
+    margin-bottom: 20px;
+}
+.form-control{
+    margin-bottom: 40px;
+    border-radius: 30px;
+    background-color: #F4F4F4;
+    width: 60%;
+    height: 55px;
+    border: none;
+    font-size: 22px;
+    padding-left: 20px;
+}
+.form-control2{
+    padding-bottom: 0px;
+    border-radius: 30px;
+    background-color: #F4F4F4;
+    width: 60%;
+    height: 55px;
+    border: none;
+    font-size: 22px;
+    padding-left: 20px;
+}
+.email{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.pass{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.btn{
+    background: #719CFD;
+    width: 60%;
+    height: 55px;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    font-size: 23px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.forgot{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    color: black;
+    font-weight: 800;
+}
+.link{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+.register{
+    margin-top: 25px;
+    font-size: 22px;
+    display: inline;
+}
