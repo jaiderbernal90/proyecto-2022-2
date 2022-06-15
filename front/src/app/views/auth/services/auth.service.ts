@@ -26,6 +26,10 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/register`, body)
   }
 
+  public logoutCheck(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/logout`)
+  } 
+
   public refreshToken() {
     return this.http.get(`${this.apiUrl}/refresh`);
   }
@@ -59,6 +63,7 @@ export class AuthService {
   public logout = () => new Promise((resolve, reject) => {
     try {
       this.clear();
+      this.logoutCheck();
       this.redirectLogin();
       resolve(true);
     } catch (e) {

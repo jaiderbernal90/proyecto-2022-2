@@ -1,0 +1,31 @@
+<aside class="aside-principal">
+    <app-logo class="mb-5 flex flex-center"></app-logo>
+    <nav class="nav flex-gap">
+        <ng-container *ngFor="let item of nav">
+            <div class="item-link">
+                <a [routerLink]="item.url" class="nav-link">
+                    <i [ngClass]="item.icon"></i>
+                    {{ item.title }}
+                </a>
+            </div>
+        </ng-container>
+    </nav>
+    <div class="flex flex-end">
+        <div class="item-link">
+            <a (click)="onClickExit()" class="nav-link" >
+                <i class="fas fa-sign-out"></i>
+                Salir
+            </a>
+        </div>
+    </div>
+</aside>
+
+<aside class="aside-principal-movil">
+    <nav class="nav flex-gap">
+        <ng-container *ngFor="let item of nav">
+            <div class="item-link">
+                <a [routerLink]="item.url" class="nav-link"><i [ngClass]="item.icon"></i></a>
+            </div>
+        </ng-container>
+    </nav>
+</aside>

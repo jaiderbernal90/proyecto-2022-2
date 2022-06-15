@@ -23,8 +23,21 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
     return res.status(200).json({ success:true, token: jwt.sign({ id, email }, _jwtSecret, { expiresIn : '48h'}), user: user  })
 }
 
+export const logout =  async (req, res) => {
+    console.log(req);
+    
+    const authHeader = req.headers["authorization"];
+    
+    jwt.sign(authHeader, "", { expiresIn: 1 } , (logout, err) => {
+        if (logout) {
+            res.send({success:true, msg : 'Has sido desconectado' });
+        } else {
+            res.send({success:true, msg:'Error'});
+        }
+    });
+};
 
- 
+
 /**
  * VerifyToken is a function that takes a token as a string and returns a promise that resolves to a
  * boolean.
@@ -46,3 +59,5 @@ export const verifyToken  = async (token:string) => {
         })
     }) as Promise<boolean>
 }
+
+

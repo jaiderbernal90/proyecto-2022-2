@@ -13,6 +13,7 @@ import { LogoComponent } from './components/logo/logo.component';
   ],
   exports: [
     LoadingButtonDirective,
+    LogoComponent
   ]
 })
 export class CoreModule { }

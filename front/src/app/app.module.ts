@@ -12,6 +12,9 @@ import { LoginComponent } from './views/auth/pages/login/login.component';
 import { RegisterComponent } from './views/auth/pages/register/register.component';
 import { HomeComponent } from './views/home/home.component';
 import { BodyComponent } from './views/auth/components/body/body.component';
+import { SideComponent } from './views/base/side/side.component';
+import { HeaderComponent } from './views/base/header/header.component';
+import { MainComponent } from './views/base/main/main.component';
 
 @NgModule({
   imports: [
@@ -21,14 +24,17 @@ import { BodyComponent } from './views/auth/components/body/body.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    CoreModule
+    CoreModule,
   ],
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    BodyComponent
+    BodyComponent,
+    SideComponent,
+    HeaderComponent,
+    MainComponent
   ],
   providers: [
     CookieService,

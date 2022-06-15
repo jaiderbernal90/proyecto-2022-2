@@ -51,6 +51,7 @@ body, app-login{
         padding: 48px 0 40px 104px;
     }
 }
+
 .logo{
     font-size: 24px;
     letter-spacing: -0.09em;
@@ -176,6 +177,166 @@ body, app-login{
     }
 }
 
+
+.container__inner.register{
+    .wave img {
+        width: 232%;
+    }
+}
+
+.main-content{
+  grid-area: section;
+  padding: 32px;
+}
+
+.aside-content{
+  grid-area: infoaside;
+}
+
+.shadow{
+    box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+}
+
+.aside-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr;
+    grid-gap: 64px;
+    gap: 48px;
+    padding: 32px;
+}
+
+.grid-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 120px 120px;
+    grid-template-areas: 
+    "span span1 span2"
+    "span3 span4 span2";
+    width: 100%;
+    gap: 32px;
+    .grid-item-2{
+        grid-area: span2; 
+    }
+    .grid-item-1{
+        grid-area: span; 
+        max-width: 200px;
+    }
+    .grid-item-3{
+        grid-area: span1;
+        max-width: 200px;
+    }
+    .grid-item-4{
+        grid-area: span3; 
+        max-width: 200px;
+    }
+    .grid-item-5{
+        grid-area: span4; 
+        max-width: 200px;
+    }
+}
+
+.btn-aside{
+    position: absolute;
+    bottom: -16px;
+    width: 80%;
+    margin: 0 auto;
+    left: 9%;
+}
+
+.grid-home{
+    display: grid;
+    grid-template-areas: "aside header header header header header"
+    "aside main main main main main"
+    "aside main main main main main";
+    grid-template-rows: 64px 1fr 1fr;
+    grid-template-columns: 283px 1fr 1fr 1fr 1fr 1fr;
+    min-height: 100vh;
+    width: 100%;
+    height: auto;
+}
+
+app-side{
+  grid-area: aside;
+}
+
+main{
+    grid-area: main;
+    background: #FCFCFC;
+    display: grid;
+    grid-template-areas: 
+    "section infoaside";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 300px;
+}
+app-header{
+    grid-area: header;
+}
+
+.aside-principal{
+    height: 100%;
+    min-height: 600px;
+    width: 280px;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 60% 8%;
+    padding: 24px 0;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.item-link{
+    padding: 0 40px;
+    .nav-link{
+        display: flex;
+        gap: 32px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.aside-principal-movil{
+    display: none;
+}
+i{
+    font-size: 24px;
+}
+
+.w-30{
+    width: 100%;
+    height: 158px;
+}
+
+.my-32{
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.mt-48{
+    margin-top: 48px;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+.flex-center{
+    align-items: center;
+}
+.flex-end{
+    justify-content: center;
+}
+
+.flex-gap{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+
 @media screen and (max-width:1440px) {
     .logo {
         margin-bottom: 26px;
@@ -244,6 +405,83 @@ body, app-login{
     .form{
         padding: 40px;
         max-width: 600px;
+    }
+
+    .grid-home{
+        grid-template-areas: "header header header header header"
+        "main main main main main"
+        "main main main main main"
+        "footer footer footer footer footer";
+        grid-template-rows: 64px 1fr 1fr 50px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    // app-side{
+    //     display: none;
+    // }
+
+    .aside-principal{
+        display: none;
+    }
+    .aside-principal-movil{
+        display: flex;
+        position: fixed;
+        bottom: 56px;
+        width: 100%;
+        z-index: 2;
+        .flex-gap{
+            justify-content: space-around;
+            background: #ffffff;
+            position: absolute;
+            width: 100%;
+            padding: 16px 0;
+            flex-direction: row;
+            box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.04);
+        }
+        .item-link{
+            padding: 0;
+        }
+    }
+
+    app-side {
+        grid-area: footer;
+    }
+
+    main {
+        grid-template-areas: "section"
+        "infoaside";
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        padding-bottom: 88px;
+    }
+
+    .grid-info {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "spana"
+        "span1"
+        "span2"
+        "span3"
+        "span4";
+        .grid-item-2{
+            grid-area: span2; 
+        }
+        .grid-item-1{
+            grid-area: spana;
+            max-width: none;
+            height: 103px;
+        }
+        .grid-item-3{
+            grid-area: span1;
+            max-width: none;
+        }
+        .grid-item-4{
+            grid-area: span3; 
+            max-width: none;
+        }
+        .grid-item-5{
+            grid-area: span4; 
+            max-width: none;
+        }
     }
 }
 
