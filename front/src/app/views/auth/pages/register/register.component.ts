@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   
   form: FormGroup;
   loading: boolean = false;
+  msg: string;
   
   constructor(
     private formBuilder: FormBuilder,
@@ -27,7 +28,7 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required,Validators.minLength(8)]],
       responsible_home: [false],
     })
-    // this.checkSession();
+    this.msg = '';
   }
 
   isInvalid(name) {
@@ -39,9 +40,14 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.form.value)
       .pipe((finalize(() => this.loading = false)))
       .subscribe(res => {
+        console.log(res);
+        
         if (res.success) {
-          this.authService.setterSettings(res);
-          this.router.navigate(['']);
+          this.msg = res.msg;
+          // this.authService.setterSettings(res);
+          setTimeout(() => {
+            this.router.navigate(['login']);
+          }, 2500);
         }
       })
 

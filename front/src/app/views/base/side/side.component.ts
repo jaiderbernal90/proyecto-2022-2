@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-side',
@@ -34,13 +35,15 @@ export class SideComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(
+    private authService:AuthService
+  ) { }
 
   ngOnInit(): void {}
   
   onClickExit():void {
     // Todo exit
     console.log('Saliendo ->');
-    
+    this.authService.logout();
   }
 }

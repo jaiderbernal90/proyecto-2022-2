@@ -60,7 +60,8 @@ export class AuthService {
     this.cookieService.delete('user', '/');
   }
 
-  public logout = () => new Promise((resolve, reject) => {
+  public /* A function that is called when the user wants to log out. */
+  logout = () => new Promise((resolve, reject) => {
     try {
       this.clear();
       this.logoutCheck();

@@ -24,8 +24,6 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 }
 
 export const logout =  async (req, res) => {
-    console.log(req);
-    
     const authHeader = req.headers["authorization"];
     
     jwt.sign(authHeader, "", { expiresIn: 1 } , (logout, err) => {

@@ -58,9 +58,9 @@
               <input type="checkbox" formControlName="responsible_home" class="form__control" [class.is-invalid]="isInvalid('responsible_home')" id="responsible_home"><label for="responsible_home" >Eres padre de familia?</label>
             </div>
 
-            <div class="alert"></div>
+            <div class="alert" style="margin-top: 8px;" *ngIf="msg">{{ msg }}</div>
             <div class="form__group">
-                <button [disabled]="form.invalid" type="submit" class="btn__primary" ngxLoading [loadingFlag]="loading" [textInitial]="'Ingresar'" [textLoading]="'Cargando'"></button>
+              <button [disabled]="form.invalid" type="submit" class="btn__primary" ngxLoading [loadingFlag]="loading" [textInitial]="'Ingresar'" [textLoading]="'Cargando'"></button>
             </div>
         </form>
         <div class="about__register">

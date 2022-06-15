@@ -33,10 +33,10 @@ export const create = async (req: Request, res: Response): Promise<Response> => 
 
     try {
         await User.create({ ...req.body, password: hash})
-        return res.status(200).json({success: true,mensaje : 'Usuario Creado Correctamente'});
+        return res.status(200).json({success: true,msg : 'Usuario Creado Correctamente'});
     } catch (error:any) {
         console.log(error);
-        return res.json({success: false, mensaje: error.array()});
+        return res.json({success: false, msg: error.array()});
     }
 
 }
@@ -58,7 +58,7 @@ export const update = async (req: Request, res: Response, next: NextFunction): P
         return res.status(200).json({success: true, user});
     } catch (error:any) {
         console.log(error);
-        return res.json({success: false, mensaje: error.array()});
+        return res.json({success: false, msg: error.array()});
     }
 
 }
@@ -73,10 +73,10 @@ export const destroy = async (req: Request, res: Response, next: NextFunction): 
             
         if(user) user.destroy()
 
-        return res.status(200).json({mensaje : 'El user se ha eliminado', user: user});
+        return res.status(200).json({msg : 'El user se ha eliminado', user: user});
     } catch (error:any) {
         console.log(error);
-        return res.json({success: false, mensaje: error.array()});
+        return res.json({success: false, msg: error.array()});
         next();
     }
 }
